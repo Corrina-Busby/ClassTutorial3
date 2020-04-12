@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Art Gallery 3 (Git) Master", "Art Gallery 3 (Git) Master\Art Gallery 3 (Git) Master.csproj", "{6278A118-2037-42B7-8014-E9909ED38BEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gallery3", "Gallery3", "{2C1E4D29-8B29-45AD-82FE-D66AE863D3E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gallery3Selfhost", "Gallery3Selfhost\Gallery3Selfhost.csproj", "{06CD2FE5-BC20-4F29-AF31-51C9D484C856}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +37,30 @@ Global
 		{6278A118-2037-42B7-8014-E9909ED38BEA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{6278A118-2037-42B7-8014-E9909ED38BEA}.Release|x86.ActiveCfg = Release|Any CPU
 		{6278A118-2037-42B7-8014-E9909ED38BEA}.Release|x86.Build.0 = Release|Any CPU
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856}.Debug|ARM.Build.0 = Debug|Any CPU
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856}.Debug|x86.Build.0 = Debug|Any CPU
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856}.Release|ARM.ActiveCfg = Release|Any CPU
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856}.Release|ARM.Build.0 = Release|Any CPU
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856}.Release|x86.ActiveCfg = Release|Any CPU
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06CD2FE5-BC20-4F29-AF31-51C9D484C856} = {2C1E4D29-8B29-45AD-82FE-D66AE863D3E7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D627F4B-FB1F-4D54-B00D-DFE840FFC511}
 	EndGlobalSection
 EndGlobal
