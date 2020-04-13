@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Gallery3Selfhost
 {
-    class clsDbConnection
+    static class clsDbConnection
     {
-        private static ConnectionStringSettings ConnectionStringSettings =
-        ConfigurationManager.ConnectionStrings["GalleryDatabase"];
-        private static DbProviderFactory ProviderFactory =
-        DbProviderFactories.GetFactory(ConnectionStringSettings.ProviderName);
+        private static ConnectionStringSettings ConnectionStringSettings = ConfigurationManager.ConnectionStrings["GalleryDatabase"];
+        private static DbProviderFactory ProviderFactory = DbProviderFactories.GetFactory(ConnectionStringSettings.ProviderName);
         private static string ConnectionStr = ConnectionStringSettings.ConnectionString;
 
         public static DataTable GetDataTable(string prSQL, Dictionary<string, Object> prPars)
@@ -56,6 +55,7 @@ namespace Gallery3Selfhost
                     prCommand.Parameters.Add(lcPar);
                 }
         }
+
 
     }
 }

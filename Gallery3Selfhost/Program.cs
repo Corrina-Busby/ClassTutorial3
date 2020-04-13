@@ -22,8 +22,8 @@ namespace Gallery3Selfhost
               defaults: new { id = RouteParameter.Optional }
             );
             // return JSON as default format
-            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(
-            new MediaTypeHeaderValue("text/html"));
+            //config.Formatters.JsonFormatter.SupportedMediaTypes.Add(
+            //new MediaTypeHeaderValue("text/html"));
             // Create server
             HttpSelfHostServer server = new HttpSelfHostServer(config);
             // Start listening

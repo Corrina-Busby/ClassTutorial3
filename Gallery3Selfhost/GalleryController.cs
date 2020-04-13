@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Gallery3Selfhost 
 {
-    public class clsGalleryController : System.Web.Http.ApiController
+    public class GalleryController : System.Web.Http.ApiController
     {
         public List<string> GetArtistNames()
         {
@@ -17,6 +18,7 @@ namespace Gallery3Selfhost
                 lcNames.Add((string)dr[0]);
             return lcNames;
         }
+    
 
     }
 }

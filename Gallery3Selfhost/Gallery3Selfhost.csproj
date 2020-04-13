@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsDbConnection.cs" />
-    <Compile Include="clsGalleryController.cs" />
+    <Compile Include="GalleryController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,6 +70,9 @@
       <Project>{6278a118-2037-42b7-8014-e9909ed38bea}</Project>
       <Name>Art Gallery 3 %28Git%29 Master</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
