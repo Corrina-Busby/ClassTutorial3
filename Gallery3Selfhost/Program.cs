@@ -21,7 +21,7 @@ namespace Gallery3Selfhost
               routeTemplate: "api/{controller}/{action}/{id}",
               defaults: new { id = RouteParameter.Optional }
             );
-            // return JSON as default format
+            //return JSON as default format
             //config.Formatters.JsonFormatter.SupportedMediaTypes.Add(
             //new MediaTypeHeaderValue("text/html"));
             // Create server

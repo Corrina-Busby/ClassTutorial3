@@ -51,28 +51,28 @@ namespace Gallery3WinForm
         {
             try
             {
-                //frmArtist.Run(new clsArtist(_ArtistList));
+                frmArtist.Run(null);
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message, "Error adding new artist");
+                MessageBox.Show(ex.Message, "Error adding new artist");
             }
         }
 
         private void lstArtists_DoubleClick(object sender, EventArgs e)
         {
-            //string lcKey;
+            string lcKey;
 
-            //lcKey = Convert.ToString(lstArtists.SelectedItem);
-            //if (lcKey != null)
-            //    try
-            //    {
-            //        frmArtist.Run(_ArtistList[lcKey]);
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message, "This should never occur");
-            //    }
+            lcKey = Convert.ToString(lstArtists.SelectedItem);
+            if (lcKey != null)
+                try
+                {
+                    frmArtist.Run(lstArtists.SelectedItem as string);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "This should never occur");
+                }
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
