@@ -65,5 +65,30 @@ namespace Gallery3WinForm
                 return await lcRespMessage.Content.ReadAsStringAsync();
             }
         }
+
+        /// <summary>
+        /// Requesting that the selfhost DELETEs an artist 
+        /// </summary>
+        /// <param name="lcKey"> The ID for the artist in the selfhost</param>
+        /// <returns></returns>
+        internal async static Task<string> DeleteArtist(string lcKey)
+        {
+            using (HttpClient lcHttpClient = new HttpClient())
+            {
+                HttpResponseMessage lcRespMessage = await lcHttpClient.DeleteAsync
+                ($"http://localhost:60064/api/gallery/DeleteArtist?ArtistName={lcKey}");
+                return await lcRespMessage.Content.ReadAsStringAsync();
+            }
+        }
+
+        internal async static Task<string> DeleteArtworkAsync(clsAllWork prWork)
+        {
+            using (HttpClient lcHttpClient = new HttpClient())
+            {
+                HttpResponseMessage lcRespMessage = await lcHttpClient.DeleteAsync
+                ($"http://localhost:60064/api/gallery/DeleteArtWork?WorkName={prWork.Name}&ArtistName={prWork.ArtistName}");
+                return await lcRespMessage.Content.ReadAsStringAsync();
+            }
+        }
     }
 }

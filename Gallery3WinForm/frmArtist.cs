@@ -127,14 +127,14 @@ namespace Gallery3WinForm
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private async void btnDelete_Click(object sender, EventArgs e)
         {
             int lcIndex = lstWorks.SelectedIndex;
 
             if (lcIndex >= 0 && MessageBox.Show("Are you sure?", "Deleting work", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                //_WorksList.RemoveAt(lcIndex);
-                UpdateDisplay();
+                MessageBox.Show(await ServiceClient.DeleteArtworkAsync(lstWorks.SelectedItem as clsAllWork));
+                refreshFormFromDB(_Artist.Name);
                 frmMain.Instance.UpdateDisplay();
             }
         }
@@ -183,20 +183,3 @@ namespace Gallery3WinForm
 
     }
 }
-
-
-//public static void Run(clsArtist prArtist)
-//{
-//    frmArtist lcArtistForm;
-//    if (!_ArtistFormList.TryGetValue(prArtist, out lcArtistForm))
-//    {
-//        lcArtistForm = new frmArtist();
-//        _ArtistFormList.Add(prArtist, lcArtistForm);
-//        lcArtistForm.SetDetails(prArtist);
-//    }
-//    else
-//    {
-//        lcArtistForm.Show();
-//        lcArtistForm.Activate();
-//    }
-//}

@@ -178,5 +178,60 @@ namespace Gallery3Selfhost
             }
         }
         #endregion
+
+        #region ### Delete an art WORK using the DELETE protocol ###
+        public string DeleteArtWork(string WorkName, string ArtistName)
+        {   // Delete
+            try
+            {
+                int lcRecCount = clsDbConnection.Execute(
+                   "DELETE FROM Work WHERE Name = @WorkName AND ArtistName = @ArtistName",
+                    prepareDeleteWorkParameters(WorkName, ArtistName));
+                if (lcRecCount == 1)
+                    return "One artwork deleted";
+                else
+                    return "Unexpected artwork delete count: " + lcRecCount;
+            }
+            catch (Exception ex)
+            {
+                return ex.GetBaseException().Message;
+            }
+        }
+
+        private Dictionary<string, object> prepareDeleteWorkParameters(string prWorkName, string prArtistName)
+        {
+            Dictionary<string, object> par = new Dictionary<string, object>(2);
+            par.Add("WorkName", prWorkName);
+            par.Add("ArtistName", prArtistName);
+            return par;
+        }
+        #endregion
+
+        #region ### Delete an ARTIST using the DELETE protocol ###
+        public string DeleteArtist(string ArtistName)
+        {   // Delete
+            try
+            {
+                int lcRecCount = clsDbConnection.Execute(
+                   "DELETE FROM Artist WHERE Name = @ArtistName",
+                    prepareDeleteArtistParameters(ArtistName));
+                if (lcRecCount == 1)
+                    return "One artist deleted";
+                else
+                    return "Unexpected artist delete count: " + lcRecCount;
+            }
+            catch (Exception ex)
+            {
+                return ex.GetBaseException().Message;
+            }
+        }
+
+        private Dictionary<string, object> prepareDeleteArtistParameters(string prName)
+        {
+            Dictionary<string, object> par = new Dictionary<string, object>(2);
+            par.Add("ArtistName", prName);
+            return par;
+        }
+        #endregion
     }
 }
