@@ -32,5 +32,11 @@ namespace Gallery3WinForm
         {
             return Name + "\t" + Date.ToShortDateString();
         }
+        public static readonly string FACTORY_PROMPT = "Enter P for Painting, S for Sculpture and H for Photograph";
+
+        public static clsAllWork NewWork(char prChoice)
+        {
+            return new clsAllWork() { WorkType = Char.ToUpper(prChoice) };
+        }
     }  
 }

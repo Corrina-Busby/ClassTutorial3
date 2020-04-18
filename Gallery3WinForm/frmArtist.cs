@@ -87,14 +87,28 @@ namespace Gallery3WinForm
             //_WorksList.SortOrder = _SortOrder; // no longer required, updated with each rbByDate_CheckedChanged
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private async void btnAdd_Click(object sender, EventArgs e)
         {
-            //string lcReply = new InputBox(clsWork.FACTORY_PROMPT).Answer;
-            //if (!string.IsNullOrEmpty(lcReply))
+            string lcReply = new InputBox(clsAllWork.FACTORY_PROMPT).Answer;
+            if (!string.IsNullOrEmpty(lcReply)) // not cancelled?
             {
-                //_WorksList.AddWork(lcReply[0]);
-                UpdateDisplay();
-                frmMain.Instance.UpdateDisplay();
+                clsAllWork lcWork = clsAllWork.NewWork(lcReply[0]);
+                if (lcWork != null) // valid artwork created?
+                {
+                    if (txtName.Enabled)       // new artist not saved?
+                    {
+                        pushData();
+                        await ServiceClient.InsertArtistAsync(_Artist);
+                        txtName.Enabled = false;
+                    }
+                    lcWork.ArtistName = _Artist.Name;
+                    frmWork.DispatchWorkForm(lcWork);
+                    if (!string.IsNullOrEmpty(lcWork.Name)) // not cancelled?
+                    {
+                        refreshFormFromDB(_Artist.Name);
+                        frmMain.Instance.UpdateDisplay();
+                    }
+                }
             }
         }
 
